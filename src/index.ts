@@ -1,7 +1,12 @@
-import express from "express";
+import { Server } from "socket.io";
+import { createServer } from "http";
+//TODO remove cors
 import cors from "cors";
-const app = express();
-
+const httpServer = createServer();
+const io = new Server(httpServer);
 const port = process.env.PORT || 3000;
+httpServer.listen(port);
 
-app.use(express.json());
+io.on("newHint", () => {
+  io.emit("clientNewHint", () => {});
+});
