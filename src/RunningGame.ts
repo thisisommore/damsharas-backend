@@ -6,7 +6,10 @@ export class RunningGame {
   keyword: string;
   constructor(private players: Player[] = []) {}
   addPlayer(player: Player) {
-    this.players.push(player);
+    const findCallback = (val) => val.type == player.type;
+    if (this.players.find(findCallback)) {
+      this.players[this.players.findIndex(findCallback)].socket = player.socket;
+    } else this.players.push(player);
   }
 
   addHints(hints: string[]) {
