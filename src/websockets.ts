@@ -7,7 +7,7 @@ import { PlayerType } from "./types/Player";
 export function registerWebSockets(httpServer: Server) {
   const io = new SocketServer(httpServer, {
     cors: {
-      origin: "http://localhost:3030",
+      origin: "https://damsharas.ommore.me",
     },
   });
 
