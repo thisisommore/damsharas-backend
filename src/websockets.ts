@@ -7,7 +7,7 @@ import { PlayerType } from "./types/Player";
 export function registerWebSockets(httpServer: Server) {
   const io = new SocketServer(httpServer, {
     cors: {
-      origin: "https://dump-charades.ommore.me",
+      origin: "https://dumb-charades.ommore.me",
     },
   });
 
